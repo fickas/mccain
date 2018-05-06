@@ -1,0 +1,67 @@
+C:\workspace\transparity\Development\Src\Services\C2C\Implementation\TMDD\ExCenter\Transparity.Services.C2C.McCainTMDD.ExCenter.WinHost\bin\Debug\app.config
+C:\workspace\transparity\Development\Src\Services\C2C\Implementation\TMDD\ExCenter\Transparity.Services.C2C.McCainTMDD.ExCenter.WinHost\bin\Debug\Configuration\ApplicationSettings.config
+C:\workspace\transparity\Development\Src\Services\C2C\Implementation\TMDD\ExCenter\Transparity.Services.C2C.McCainTMDD.ExCenter.WinHost\bin\Debug\Configuration\AppSettings.config
+C:\workspace\transparity\Development\Src\Services\C2C\Implementation\TMDD\ExCenter\Transparity.Services.C2C.McCainTMDD.ExCenter.WinHost\bin\Debug\Configuration\ConnectionStrings.config
+C:\workspace\transparity\Development\Src\Services\C2C\Implementation\TMDD\ExCenter\Transparity.Services.C2C.McCainTMDD.ExCenter.WinHost\bin\Debug\Transparity.Services.C2C.McCainTMDD.ExCenter.WinHost.exe.config
+C:\workspace\transparity\Development\Src\Services\C2C\Implementation\TMDD\ExCenter\Transparity.Services.C2C.McCainTMDD.ExCenter.WinHost\bin\Debug\Transparity.Services.C2C.McCainTMDD.ExCenter.WinHost.exe
+C:\workspace\transparity\Development\Src\Services\C2C\Implementation\TMDD\ExCenter\Transparity.Services.C2C.McCainTMDD.ExCenter.WinHost\bin\Debug\Transparity.Services.C2C.McCainTMDD.ExCenter.WinHost.pdb
+C:\workspace\transparity\Development\Src\Services\C2C\Implementation\TMDD\ExCenter\Transparity.Services.C2C.McCainTMDD.ExCenter.WinHost\bin\Debug\Newtonsoft.Json.dll
+C:\workspace\transparity\Development\Src\Services\C2C\Implementation\TMDD\ExCenter\Transparity.Services.C2C.McCainTMDD.ExCenter.WinHost\bin\Debug\Transparity.Core.dll
+C:\workspace\transparity\Development\Src\Services\C2C\Implementation\TMDD\ExCenter\Transparity.Services.C2C.McCainTMDD.ExCenter.WinHost\bin\Debug\Transparity.Core.Services.Configuration.dll
+C:\workspace\transparity\Development\Src\Services\C2C\Implementation\TMDD\ExCenter\Transparity.Services.C2C.McCainTMDD.ExCenter.WinHost\bin\Debug\Transparity.Core.Services.dll
+C:\workspace\transparity\Development\Src\Services\C2C\Implementation\TMDD\ExCenter\Transparity.Services.C2C.McCainTMDD.ExCenter.WinHost\bin\Debug\Transparity.Services.C2C.Interfaces.dll
+C:\workspace\transparity\Development\Src\Services\C2C\Implementation\TMDD\ExCenter\Transparity.Services.C2C.McCainTMDD.ExCenter.WinHost\bin\Debug\Transparity.Services.C2C.McCainTMDD.ExCenter.dll
+C:\workspace\transparity\Development\Src\Services\C2C\Implementation\TMDD\ExCenter\Transparity.Services.C2C.McCainTMDD.ExCenter.WinHost\bin\Debug\System.Web.Http.dll
+C:\workspace\transparity\Development\Src\Services\C2C\Implementation\TMDD\ExCenter\Transparity.Services.C2C.McCainTMDD.ExCenter.WinHost\bin\Debug\Microsoft.AspNet.SignalR.Core.dll
+C:\workspace\transparity\Development\Src\Services\C2C\Implementation\TMDD\ExCenter\Transparity.Services.C2C.McCainTMDD.ExCenter.WinHost\bin\Debug\Transparity.Services.C2C.Utils.dll
+C:\workspace\transparity\Development\Src\Services\C2C\Implementation\TMDD\ExCenter\Transparity.Services.C2C.McCainTMDD.ExCenter.WinHost\bin\Debug\System.Net.Http.Formatting.dll
+C:\workspace\transparity\Development\Src\Services\C2C\Implementation\TMDD\ExCenter\Transparity.Services.C2C.McCainTMDD.ExCenter.WinHost\bin\Debug\Microsoft.Owin.dll
+C:\workspace\transparity\Development\Src\Services\C2C\Implementation\TMDD\ExCenter\Transparity.Services.C2C.McCainTMDD.ExCenter.WinHost\bin\Debug\Microsoft.Owin.Security.dll
+C:\workspace\transparity\Development\Src\Services\C2C\Implementation\TMDD\ExCenter\Transparity.Services.C2C.McCainTMDD.ExCenter.WinHost\bin\Debug\Transparity.Common.Data.Contracts.dll
+C:\workspace\transparity\Development\Src\Services\C2C\Implementation\TMDD\ExCenter\Transparity.Services.C2C.McCainTMDD.ExCenter.WinHost\bin\Debug\Transparity.Core.Services.pdb
+C:\workspace\transparity\Development\Src\Services\C2C\Implementation\TMDD\ExCenter\Transparity.Services.C2C.McCainTMDD.ExCenter.WinHost\bin\Debug\Transparity.Core.pdb
+C:\workspace\transparity\Development\Src\Services\C2C\Implementation\TMDD\ExCenter\Transparity.Services.C2C.McCainTMDD.ExCenter.WinHost\bin\Debug\Transparity.Core.Services.Configuration.pdb
+C:\workspace\transparity\Development\Src\Services\C2C\Implementation\TMDD\ExCenter\Transparity.Services.C2C.McCainTMDD.ExCenter.WinHost\bin\Debug\Transparity.Services.C2C.Interfaces.pdb
+C:\workspace\transparity\Development\Src\Services\C2C\Implementation\TMDD\ExCenter\Transparity.Services.C2C.McCainTMDD.ExCenter.WinHost\bin\Debug\Transparity.Services.C2C.McCainTMDD.ExCenter.pdb
+C:\workspace\transparity\Development\Src\Services\C2C\Implementation\TMDD\ExCenter\Transparity.Services.C2C.McCainTMDD.ExCenter.WinHost\bin\Debug\Newtonsoft.Json.xml
+C:\workspace\transparity\Development\Src\Services\C2C\Implementation\TMDD\ExCenter\Transparity.Services.C2C.McCainTMDD.ExCenter.WinHost\bin\Debug\System.Web.Http.xml
+C:\workspace\transparity\Development\Src\Services\C2C\Implementation\TMDD\ExCenter\Transparity.Services.C2C.McCainTMDD.ExCenter.WinHost\bin\Debug\Microsoft.AspNet.SignalR.Core.xml
+C:\workspace\transparity\Development\Src\Services\C2C\Implementation\TMDD\ExCenter\Transparity.Services.C2C.McCainTMDD.ExCenter.WinHost\bin\Debug\Transparity.Services.C2C.Utils.pdb
+C:\workspace\transparity\Development\Src\Services\C2C\Implementation\TMDD\ExCenter\Transparity.Services.C2C.McCainTMDD.ExCenter.WinHost\bin\Debug\System.Net.Http.Formatting.xml
+C:\workspace\transparity\Development\Src\Services\C2C\Implementation\TMDD\ExCenter\Transparity.Services.C2C.McCainTMDD.ExCenter.WinHost\bin\Debug\Microsoft.Owin.xml
+C:\workspace\transparity\Development\Src\Services\C2C\Implementation\TMDD\ExCenter\Transparity.Services.C2C.McCainTMDD.ExCenter.WinHost\bin\Debug\Microsoft.Owin.Security.xml
+C:\workspace\transparity\Development\Src\Services\C2C\Implementation\TMDD\ExCenter\Transparity.Services.C2C.McCainTMDD.ExCenter.WinHost\bin\Debug\Transparity.Common.Data.Contracts.pdb
+C:\workspace\transparity\Development\Src\Services\C2C\Implementation\TMDD\ExCenter\Transparity.Services.C2C.McCainTMDD.ExCenter.WinHost\obj\Debug\Transparity.Services.C2C.McCainTMDD.ExCenter.WinHost.csprojResolveAssemblyReference.cache
+C:\workspace\transparity\Development\Src\Services\C2C\Implementation\TMDD\ExCenter\Transparity.Services.C2C.McCainTMDD.ExCenter.WinHost\obj\Debug\Transparity.Services.C2C.McCainTMDD.ExCenter.WinHost.exe
+C:\workspace\transparity\Development\Src\Services\C2C\Implementation\TMDD\ExCenter\Transparity.Services.C2C.McCainTMDD.ExCenter.WinHost\obj\Debug\Transparity.Services.C2C.McCainTMDD.ExCenter.WinHost.pdb
+C:\workspace\transparity TMDD-EC\ExCenter\Transparity.Services.C2C.McCainTMDD.ExCenter.WinHost\bin\Debug\Transparity.Services.C2C.McCainTMDD.ExCenter.WinHost.exe.config
+C:\workspace\transparity TMDD-EC\ExCenter\Transparity.Services.C2C.McCainTMDD.ExCenter.WinHost\bin\Debug\Transparity.Services.C2C.McCainTMDD.ExCenter.WinHost.exe
+C:\workspace\transparity TMDD-EC\ExCenter\Transparity.Services.C2C.McCainTMDD.ExCenter.WinHost\bin\Debug\Transparity.Services.C2C.McCainTMDD.ExCenter.WinHost.pdb
+C:\workspace\transparity TMDD-EC\ExCenter\Transparity.Services.C2C.McCainTMDD.ExCenter.WinHost\bin\Debug\Transparity.Core.dll
+C:\workspace\transparity TMDD-EC\ExCenter\Transparity.Services.C2C.McCainTMDD.ExCenter.WinHost\bin\Debug\Transparity.Core.Services.Configuration.dll
+C:\workspace\transparity TMDD-EC\ExCenter\Transparity.Services.C2C.McCainTMDD.ExCenter.WinHost\bin\Debug\Transparity.Core.Services.dll
+C:\workspace\transparity TMDD-EC\ExCenter\Transparity.Services.C2C.McCainTMDD.ExCenter.WinHost\bin\Debug\Transparity.Services.C2C.Interfaces.dll
+C:\workspace\transparity TMDD-EC\ExCenter\Transparity.Services.C2C.McCainTMDD.ExCenter.WinHost\bin\Debug\Transparity.Services.C2C.McCainTMDD.ExCenter.dll
+C:\workspace\transparity TMDD-EC\ExCenter\Transparity.Services.C2C.McCainTMDD.ExCenter.WinHost\bin\Debug\Transparity.Services.C2C.Utils.dll
+C:\workspace\transparity TMDD-EC\ExCenter\Transparity.Services.C2C.McCainTMDD.ExCenter.WinHost\bin\Debug\Transparity.Services.C2C.McCainTMDD.ExCenter.pdb
+C:\workspace\transparity TMDD-EC\ExCenter\Transparity.Services.C2C.McCainTMDD.ExCenter.WinHost\bin\Debug\Transparity.Services.C2C.Utils.pdb
+C:\workspace\transparity TMDD-EC\ExCenter\Transparity.Services.C2C.McCainTMDD.ExCenter.WinHost\obj\Debug\Transparity.Services.C2C.McCainTMDD.ExCenter.WinHost.csprojResolveAssemblyReference.cache
+C:\workspace\transparity TMDD-EC\ExCenter\Transparity.Services.C2C.McCainTMDD.ExCenter.WinHost\obj\Debug\Transparity.Services.C2C.McCainTMDD.ExCenter.WinHost.exe
+C:\workspace\transparity TMDD-EC\ExCenter\Transparity.Services.C2C.McCainTMDD.ExCenter.WinHost\obj\Debug\Transparity.Services.C2C.McCainTMDD.ExCenter.WinHost.pdb
+C:\workspace\transparity TMDD-EC\ExCenter\Transparity.Services.C2C.McCainTMDD.ExCenter.WinHost\bin\Debug\Configuration\ApplicationSettings.config
+C:\workspace\transparity TMDD-EC\ExCenter\Transparity.Services.C2C.McCainTMDD.ExCenter.WinHost\bin\Debug\Configuration\AppSettings.config
+C:\workspace\transparity TMDD-EC\ExCenter\Transparity.Services.C2C.McCainTMDD.ExCenter.WinHost\bin\Debug\Configuration\ConnectionStrings.config
+C:\workspace\transparity TMDD-EC\ExCenter\Transparity.Services.C2C.McCainTMDD.ExCenter.WinHost\bin\Debug\Transparity.Services.C2C.McCainTMDD.ExCenter.dll.config
+C:\workspace\transparity TMDD-EC\ExCenter\Transparity.Services.C2C.McCainTMDD.ExCenter.WinHost\obj\Debug\Transparity.Services.C2C.McCainTMDD.ExCenter.WinHost.csproj.CoreCompileInputs.cache
+C:\Users\Steve\Documents\TMDD\transparity TMDD-EC-20170927\ExCenter\WinHost\bin\Debug\Transparity.Services.C2C.McCainTMDD.ExCenter.WinHost.exe.config
+C:\Users\Steve\Documents\TMDD\transparity TMDD-EC-20170927\ExCenter\WinHost\bin\Debug\Transparity.Services.C2C.McCainTMDD.ExCenter.WinHost.exe
+C:\Users\Steve\Documents\TMDD\transparity TMDD-EC-20170927\ExCenter\WinHost\bin\Debug\Transparity.Services.C2C.McCainTMDD.ExCenter.WinHost.pdb
+C:\Users\Steve\Documents\TMDD\transparity TMDD-EC-20170927\ExCenter\WinHost\bin\Debug\Transparity.Services.C2C.Interfaces.dll
+C:\Users\Steve\Documents\TMDD\transparity TMDD-EC-20170927\ExCenter\WinHost\bin\Debug\Transparity.Services.C2C.McCainTMDD.ExCenter.dll
+C:\Users\Steve\Documents\TMDD\transparity TMDD-EC-20170927\ExCenter\WinHost\bin\Debug\Transparity.Services.C2C.Utils.dll
+C:\Users\Steve\Documents\TMDD\transparity TMDD-EC-20170927\ExCenter\WinHost\bin\Debug\Transparity.Services.C2C.McCainTMDD.ExCenter.pdb
+C:\Users\Steve\Documents\TMDD\transparity TMDD-EC-20170927\ExCenter\WinHost\bin\Debug\Transparity.Services.C2C.McCainTMDD.ExCenter.dll.config
+C:\Users\Steve\Documents\TMDD\transparity TMDD-EC-20170927\ExCenter\WinHost\obj\Debug\Transparity.Services.C2C.McCainTMDD.ExCenter.WinHost.csprojResolveAssemblyReference.cache
+C:\Users\Steve\Documents\TMDD\transparity TMDD-EC-20170927\ExCenter\WinHost\obj\Debug\Transparity.Services.C2C.McCainTMDD.ExCenter.WinHost.csproj.CoreCompileInputs.cache
+C:\Users\Steve\Documents\TMDD\transparity TMDD-EC-20170927\ExCenter\WinHost\obj\Debug\Transparity.Services.C2C.McCainTMDD.ExCenter.WinHost.exe
+C:\Users\Steve\Documents\TMDD\transparity TMDD-EC-20170927\ExCenter\WinHost\obj\Debug\Transparity.Services.C2C.McCainTMDD.ExCenter.WinHost.pdb

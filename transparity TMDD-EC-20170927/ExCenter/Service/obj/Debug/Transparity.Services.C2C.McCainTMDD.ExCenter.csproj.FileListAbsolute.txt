@@ -1,0 +1,32 @@
+C:\workspace\transparity\Development\Src\Services\C2C\Implementation\TMDD\ExCenter\Transparity.Services.C2C.McCainTMDD.ExCenter\bin\Debug\Transparity.Services.C2C.McCainTMDD.ExCenter.dll.config
+C:\workspace\transparity\Development\Src\Services\C2C\Implementation\TMDD\ExCenter\Transparity.Services.C2C.McCainTMDD.ExCenter\bin\Debug\Transparity.Services.C2C.McCainTMDD.ExCenter.dll
+C:\workspace\transparity\Development\Src\Services\C2C\Implementation\TMDD\ExCenter\Transparity.Services.C2C.McCainTMDD.ExCenter\bin\Debug\Transparity.Services.C2C.McCainTMDD.ExCenter.pdb
+C:\workspace\transparity\Development\Src\Services\C2C\Implementation\TMDD\ExCenter\Transparity.Services.C2C.McCainTMDD.ExCenter\bin\Debug\Transparity.Services.C2C.Interfaces.dll
+C:\workspace\transparity\Development\Src\Services\C2C\Implementation\TMDD\ExCenter\Transparity.Services.C2C.McCainTMDD.ExCenter\bin\Debug\Transparity.Services.C2C.Utils.dll
+C:\workspace\transparity\Development\Src\Services\C2C\Implementation\TMDD\ExCenter\Transparity.Services.C2C.McCainTMDD.ExCenter\bin\Debug\Transparity.Common.Data.Contracts.dll
+C:\workspace\transparity\Development\Src\Services\C2C\Implementation\TMDD\ExCenter\Transparity.Services.C2C.McCainTMDD.ExCenter\bin\Debug\Transparity.Core.dll
+C:\workspace\transparity\Development\Src\Services\C2C\Implementation\TMDD\ExCenter\Transparity.Services.C2C.McCainTMDD.ExCenter\bin\Debug\Transparity.Services.C2C.Interfaces.pdb
+C:\workspace\transparity\Development\Src\Services\C2C\Implementation\TMDD\ExCenter\Transparity.Services.C2C.McCainTMDD.ExCenter\bin\Debug\Transparity.Services.C2C.Utils.pdb
+C:\workspace\transparity\Development\Src\Services\C2C\Implementation\TMDD\ExCenter\Transparity.Services.C2C.McCainTMDD.ExCenter\bin\Debug\Transparity.Common.Data.Contracts.pdb
+C:\workspace\transparity\Development\Src\Services\C2C\Implementation\TMDD\ExCenter\Transparity.Services.C2C.McCainTMDD.ExCenter\bin\Debug\Transparity.Core.pdb
+C:\workspace\transparity\Development\Src\Services\C2C\Implementation\TMDD\ExCenter\Transparity.Services.C2C.McCainTMDD.ExCenter\obj\Debug\Transparity.Services.C2C.McCainTMDD.ExCenter.csprojResolveAssemblyReference.cache
+C:\workspace\transparity\Development\Src\Services\C2C\Implementation\TMDD\ExCenter\Transparity.Services.C2C.McCainTMDD.ExCenter\obj\Debug\Transparity.Services.C2C.McCainTMDD.ExCenter.dll
+C:\workspace\transparity\Development\Src\Services\C2C\Implementation\TMDD\ExCenter\Transparity.Services.C2C.McCainTMDD.ExCenter\obj\Debug\Transparity.Services.C2C.McCainTMDD.ExCenter.pdb
+C:\workspace\transparity TMDD-EC\ExCenter\Transparity.Services.C2C.McCainTMDD.ExCenter\bin\Debug\Transparity.Services.C2C.McCainTMDD.ExCenter.dll.config
+C:\workspace\transparity TMDD-EC\ExCenter\Transparity.Services.C2C.McCainTMDD.ExCenter\bin\Debug\Transparity.Services.C2C.McCainTMDD.ExCenter.dll
+C:\workspace\transparity TMDD-EC\ExCenter\Transparity.Services.C2C.McCainTMDD.ExCenter\bin\Debug\Transparity.Services.C2C.McCainTMDD.ExCenter.pdb
+C:\workspace\transparity TMDD-EC\ExCenter\Transparity.Services.C2C.McCainTMDD.ExCenter\bin\Debug\Transparity.Services.C2C.Interfaces.dll
+C:\workspace\transparity TMDD-EC\ExCenter\Transparity.Services.C2C.McCainTMDD.ExCenter\bin\Debug\Transparity.Services.C2C.Utils.dll
+C:\workspace\transparity TMDD-EC\ExCenter\Transparity.Services.C2C.McCainTMDD.ExCenter\obj\Debug\Transparity.Services.C2C.McCainTMDD.ExCenter.csprojResolveAssemblyReference.cache
+C:\workspace\transparity TMDD-EC\ExCenter\Transparity.Services.C2C.McCainTMDD.ExCenter\obj\Debug\Transparity.Services.C2C.McCainTMDD.ExCenter.dll
+C:\workspace\transparity TMDD-EC\ExCenter\Transparity.Services.C2C.McCainTMDD.ExCenter\obj\Debug\Transparity.Services.C2C.McCainTMDD.ExCenter.pdb
+C:\workspace\transparity TMDD-EC\ExCenter\Transparity.Services.C2C.McCainTMDD.ExCenter\obj\Debug\Transparity.Services.C2C.McCainTMDD.ExCenter.csproj.CoreCompileInputs.cache
+C:\Users\Steve\Documents\TMDD\transparity TMDD-EC-20170927\ExCenter\Service\bin\Debug\Transparity.Services.C2C.McCainTMDD.ExCenter.dll.config
+C:\Users\Steve\Documents\TMDD\transparity TMDD-EC-20170927\ExCenter\Service\bin\Debug\Transparity.Services.C2C.McCainTMDD.ExCenter.dll
+C:\Users\Steve\Documents\TMDD\transparity TMDD-EC-20170927\ExCenter\Service\bin\Debug\Transparity.Services.C2C.McCainTMDD.ExCenter.pdb
+C:\Users\Steve\Documents\TMDD\transparity TMDD-EC-20170927\ExCenter\Service\bin\Debug\Transparity.Services.C2C.Interfaces.dll
+C:\Users\Steve\Documents\TMDD\transparity TMDD-EC-20170927\ExCenter\Service\bin\Debug\Transparity.Services.C2C.Utils.dll
+C:\Users\Steve\Documents\TMDD\transparity TMDD-EC-20170927\ExCenter\Service\obj\Debug\Transparity.Services.C2C.McCainTMDD.ExCenter.csprojResolveAssemblyReference.cache
+C:\Users\Steve\Documents\TMDD\transparity TMDD-EC-20170927\ExCenter\Service\obj\Debug\Transparity.Services.C2C.McCainTMDD.ExCenter.csproj.CoreCompileInputs.cache
+C:\Users\Steve\Documents\TMDD\transparity TMDD-EC-20170927\ExCenter\Service\obj\Debug\Transparity.Services.C2C.McCainTMDD.ExCenter.dll
+C:\Users\Steve\Documents\TMDD\transparity TMDD-EC-20170927\ExCenter\Service\obj\Debug\Transparity.Services.C2C.McCainTMDD.ExCenter.pdb

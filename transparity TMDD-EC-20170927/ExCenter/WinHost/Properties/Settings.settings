@@ -1,0 +1,15 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Transparity.Services.C2C.McCainTMDD.ExCenter.WinHost.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="EnableOnChange" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="SubscriptionPath" Type="System.String" Scope="User">
+      <Value Profile="(Default)">C:\TFS_10_10_2016\Services\C2C\Implementation\TMDD\WinHost\bin\Debug\Subscriptions.json</Value>
+    </Setting>
+    <Setting Name="EnablePeriodic" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

@@ -1,0 +1,27 @@
+c:\users\kdrummond\documents\visual studio 2015\Projects\ConsoleApplication1\ConsoleApplication1\bin\Debug\TransparityTmddClient.exe.config
+c:\users\kdrummond\documents\visual studio 2015\Projects\ConsoleApplication1\ConsoleApplication1\bin\Debug\TransparityTmddClient.exe
+c:\users\kdrummond\documents\visual studio 2015\Projects\ConsoleApplication1\ConsoleApplication1\bin\Debug\TransparityTmddClient.pdb
+c:\users\kdrummond\documents\visual studio 2015\Projects\ConsoleApplication1\ConsoleApplication1\obj\Debug\Transparity.C2C.Client.Example.csprojResolveAssemblyReference.cache
+c:\users\kdrummond\documents\visual studio 2015\Projects\ConsoleApplication1\ConsoleApplication1\obj\Debug\TransparityTmddClient.exe
+c:\users\kdrummond\documents\visual studio 2015\Projects\ConsoleApplication1\ConsoleApplication1\obj\Debug\TransparityTmddClient.pdb
+C:\Users\kdrummond\Documents\Visual Studio 2015\Projects\ConsoleApplication1\Transparity.C2C.Client.Example\bin\Debug\TransparityTmddClient.exe.config
+C:\Users\kdrummond\Documents\Visual Studio 2015\Projects\ConsoleApplication1\Transparity.C2C.Client.Example\obj\Debug\TransparityTmddClient.exe
+C:\Users\kdrummond\Documents\Visual Studio 2015\Projects\ConsoleApplication1\Transparity.C2C.Client.Example\obj\Debug\TransparityTmddClient.pdb
+C:\Users\kdrummond\Documents\Visual Studio 2015\Projects\ConsoleApplication1\Transparity.C2C.Client.Example\bin\Debug\TransparityTmddClient.exe
+C:\Users\kdrummond\Documents\Visual Studio 2015\Projects\ConsoleApplication1\Transparity.C2C.Client.Example\bin\Debug\TransparityTmddClient.pdb
+C:\Users\kdrummond\Documents\Visual Studio 2015\Projects\ConsoleApplication1\Transparity.C2C.Client.Example\obj\Debug\Transparity.C2C.Client.Example.csprojResolveAssemblyReference.cache
+C:\workspace\VS2015\Transparity.C2C.Client.Example\Transparity.C2C.Client.Example\bin\Debug\TransparityTmddClient.exe.config
+C:\workspace\VS2015\Projects\Transparity.C2C.Client.Example\Transparity.C2C.Client.Example\bin\Debug\TransparityTmddClient.exe.config
+C:\workspace\VS2015\Projects\Transparity.C2C.Client.Example\Transparity.C2C.Client.Example\bin\Debug\TransparityTmddClient.exe
+C:\workspace\VS2015\Projects\Transparity.C2C.Client.Example\Transparity.C2C.Client.Example\bin\Debug\TransparityTmddClient.pdb
+C:\workspace\VS2015\Projects\Transparity.C2C.Client.Example\Transparity.C2C.Client.Example\obj\Debug\Transparity.C2C.Client.Example.csprojResolveAssemblyReference.cache
+C:\workspace\VS2015\Projects\Transparity.C2C.Client.Example\Transparity.C2C.Client.Example\obj\Debug\TransparityTmddClient.exe
+C:\workspace\VS2015\Projects\Transparity.C2C.Client.Example\Transparity.C2C.Client.Example\obj\Debug\TransparityTmddClient.pdb
+C:\Users\Steve\Documents\TMDD\transparity TMDD-EC-20170927\Transparity.C2C.Client.Example\bin\Debug\TransparityTmddClient.exe.config
+C:\Users\Steve\Documents\TMDD\transparity TMDD-EC-20170927\Transparity.C2C.Client.Example\bin\Debug\TransparityTmddClient.exe
+C:\Users\Steve\Documents\TMDD\transparity TMDD-EC-20170927\Transparity.C2C.Client.Example\bin\Debug\TransparityTmddClient.pdb
+C:\Users\Steve\Documents\TMDD\transparity TMDD-EC-20170927\Transparity.C2C.Client.Example\bin\Debug\Transparity.Services.C2C.Interfaces.dll
+C:\Users\Steve\Documents\TMDD\transparity TMDD-EC-20170927\Transparity.C2C.Client.Example\obj\Debug\Transparity.C2C.Client.Example.csprojResolveAssemblyReference.cache
+C:\Users\Steve\Documents\TMDD\transparity TMDD-EC-20170927\Transparity.C2C.Client.Example\obj\Debug\Transparity.C2C.Client.Example.csproj.CoreCompileInputs.cache
+C:\Users\Steve\Documents\TMDD\transparity TMDD-EC-20170927\Transparity.C2C.Client.Example\obj\Debug\TransparityTmddClient.exe
+C:\Users\Steve\Documents\TMDD\transparity TMDD-EC-20170927\Transparity.C2C.Client.Example\obj\Debug\TransparityTmddClient.pdb
