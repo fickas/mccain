@@ -1,0 +1,22 @@
+1. Enable IIS (more info on this)
+2. In Visual Studio right click IntersectionApi project and select "Publish"
+3. If you have not created a custom profile do so now
+   3.1 Click "New Profile..."
+   3.2 Select "Folder" as the publish target
+   3.3 Browse to the location you wish to publish to. Make a note of this location
+4. Choose the custom profile and click "Publish"
+4. Browse to the location the project was published to
+5. Right click the folder and click "Properties"
+6. Click on the "Security" tab and select "Edit..."
+7. Click "Add..." and then "Advanced..."
+8. Click "Find Now"
+9. In the search results find and select "IIS_IUSRS" and click "OK" and then "OK" again
+10. Select "IIS_IUSRS (...)" in the Group or user names section
+11. Select the permission for "Full control" and click "OK"
+12. Open IIS
+13. Right click "Sites" and select "Add website..."
+14. Under "Site name:" type the site name
+15. Under "Physical path:" browse to the folder that was published to and select it
+16. For the "IP address:" field select the desired IP address from the dropdown and choose a port number
+17. Click "OK"
+18. The web server should be running. 
