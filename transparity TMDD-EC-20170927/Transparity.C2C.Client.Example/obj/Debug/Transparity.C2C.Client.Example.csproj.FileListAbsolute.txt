@@ -25,3 +25,12 @@ C:\Users\Steve\Documents\TMDD\transparity TMDD-EC-20170927\Transparity.C2C.Clien
 C:\Users\Steve\Documents\TMDD\transparity TMDD-EC-20170927\Transparity.C2C.Client.Example\obj\Debug\Transparity.C2C.Client.Example.csproj.CoreCompileInputs.cache
 C:\Users\Steve\Documents\TMDD\transparity TMDD-EC-20170927\Transparity.C2C.Client.Example\obj\Debug\TransparityTmddClient.exe
 C:\Users\Steve\Documents\TMDD\transparity TMDD-EC-20170927\Transparity.C2C.Client.Example\obj\Debug\TransparityTmddClient.pdb
+C:\Users\Ben\Documents\traffic_signal_project\transparity TMDD-EC-20170927\Transparity.C2C.Client.Example\bin\Debug\TransparityTmddClient.exe.config
+C:\Users\Ben\Documents\traffic_signal_project\transparity TMDD-EC-20170927\Transparity.C2C.Client.Example\bin\Debug\TransparityTmddClient.exe
+C:\Users\Ben\Documents\traffic_signal_project\transparity TMDD-EC-20170927\Transparity.C2C.Client.Example\bin\Debug\TransparityTmddClient.pdb
+C:\Users\Ben\Documents\traffic_signal_project\transparity TMDD-EC-20170927\Transparity.C2C.Client.Example\bin\Debug\Transparity.Services.C2C.Interfaces.dll
+C:\Users\Ben\Documents\traffic_signal_project\transparity TMDD-EC-20170927\Transparity.C2C.Client.Example\obj\Debug\Transparity.C2C.Client.Example.csproj.CoreCompileInputs.cache
+C:\Users\Ben\Documents\traffic_signal_project\transparity TMDD-EC-20170927\Transparity.C2C.Client.Example\obj\Debug\Transparity.C2C.Client.Example.csproj.CopyComplete
+C:\Users\Ben\Documents\traffic_signal_project\transparity TMDD-EC-20170927\Transparity.C2C.Client.Example\obj\Debug\TransparityTmddClient.exe
+C:\Users\Ben\Documents\traffic_signal_project\transparity TMDD-EC-20170927\Transparity.C2C.Client.Example\obj\Debug\TransparityTmddClient.pdb
+C:\Users\Ben\Documents\traffic_signal_project\transparity TMDD-EC-20170927\Transparity.C2C.Client.Example\obj\Debug\Transparity.C2C.Client.Example.csprojAssemblyReference.cache

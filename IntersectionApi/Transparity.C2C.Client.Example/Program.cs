@@ -256,13 +256,6 @@ namespace Transparity.C2C.Client.Example
                 {
                     organizationid = orgId
                 },
-                devicefilter = new DeviceInformationRequestFilter()
-                {
-                    deviceidlist = new DeviceInformationRequestFilterDeviceidlist()
-                    {
-                        deviceid = new[] { "b3c0fe11-bbe0-4dd2-9a6d-a77700e13754" }
-                    }
-                },
             };
 
             try
@@ -346,13 +339,6 @@ namespace Transparity.C2C.Client.Example
                     organizationinformation = new OrganizationInformation()
                     {
                         organizationid = orgId
-                    },
-                    devicefilter = new DeviceInformationRequestFilter()
-                    {
-                        deviceidlist = new DeviceInformationRequestFilterDeviceidlist()
-                        {
-                            deviceid = new[] { "b3c0fe11-bbe0-4dd2-9a6d-a77700e13754" }
-                        }
                     },
                 }
             };
@@ -445,13 +431,6 @@ namespace Transparity.C2C.Client.Example
                     organizationinformation = new OrganizationInformation()
                     {
                         organizationid = orgId
-                    },
-                    devicefilter = new DeviceInformationRequestFilter()
-                    {
-                        deviceidlist = new DeviceInformationRequestFilterDeviceidlist()
-                        {
-                            deviceid = new[] { "b3c0fe11-bbe0-4dd2-9a6d-a77700e13754" }
-                        }
                     },
                 }
             };

@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2000
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IntersectionApi", "IntersectionApi\IntersectionApi.csproj", "{2209678B-56D9-463D-8526-EAFDF0E4F230}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Transparity.C2C.Client.Example", "Transparity.C2C.Client.Example\Transparity.C2C.Client.Example.csproj", "{1BA6B431-B053-4F40-9AB5-40137CD60006}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2209678B-56D9-463D-8526-EAFDF0E4F230}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2209678B-56D9-463D-8526-EAFDF0E4F230}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2209678B-56D9-463D-8526-EAFDF0E4F230}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2209678B-56D9-463D-8526-EAFDF0E4F230}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1BA6B431-B053-4F40-9AB5-40137CD60006}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1BA6B431-B053-4F40-9AB5-40137CD60006}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1BA6B431-B053-4F40-9AB5-40137CD60006}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1BA6B431-B053-4F40-9AB5-40137CD60006}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D19CC640-BBA2-40C6-AFB9-8FEA1CD8B508}
+	EndGlobalSection
+EndGlobal
