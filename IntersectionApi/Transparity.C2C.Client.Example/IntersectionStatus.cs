@@ -11,7 +11,7 @@ namespace Transparity.C2C.Client.Example
         public string ID { get; set; }
         public string Name { get; set; }
         public int GroupGreens { get; set; }
-        public List<PhaseInfo> ActivePhases { get; set; }
+        public List<int> ActivePhases { get; set; }
         public List<PhaseInfo> AllPhases { get; set; }
     }
 }

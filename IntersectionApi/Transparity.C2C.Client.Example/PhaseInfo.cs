@@ -11,5 +11,9 @@ namespace Transparity.C2C.Client.Example
         public int PhaseID { get; set; }
         public int MinGreen { get; set; }
         public int MaxGreen { get; set; }
+        public float LastActiveTime { get; set; }
+        public float CurrentActiveTime { get; set; }
+        public DateTime BecameActiveTimestap { get; set; }
+        public bool CurrentlyActive { get; set; }
     }
 }
