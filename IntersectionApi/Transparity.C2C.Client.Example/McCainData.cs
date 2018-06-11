@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Threading;
 using Transparity.Services.C2C.Interfaces.TMDDInterface.Client;
 using Transparity.Services.C2C.McCainTMDD;
@@ -15,6 +16,8 @@ namespace Transparity.C2C.Client.Example
     {
         private const string Username = "93a7c97b-dd75-4373-9dd6-81683de20d86";
         private const string Password = "yrAteFcHBE1A05YWKjT7";
+        // Path to the log file
+        private const string LOGFILE = "C:\\Users\\Ben\\Desktop\\intersection_update.lg";
 
         private static readonly string MyExternalCenterUrl = Properties.Settings.Default.ExternalCenterUrl;
         private static readonly Guid SubscriptionId = Guid.NewGuid();
@@ -25,7 +28,7 @@ namespace Transparity.C2C.Client.Example
         // This dictionary holds the intersections we want to continuously query
         private static Dictionary<string, IntersectionStatus> statusDictionary = new Dictionary<string, IntersectionStatus>();
         private static Thread updateThread;
-        private static Object statusLock = new Object();
+        private static Object statusLock = new Object();        
         
         /// <summary>
         /// Constructor. Perform setup and start the update thread.
@@ -72,7 +75,7 @@ namespace Transparity.C2C.Client.Example
                     {
                         IntersectionStatus oldStatus = statusDictionary[key];
                         IntersectionStatus newStatus = GetIntersectionStatusNoLock(key);
-
+                        bool logChange = false;
                         // If this isn't the first update for this intersection
                         if (oldStatus != null)
                         {
@@ -85,12 +88,14 @@ namespace Transparity.C2C.Client.Example
                                 {
                                     newStatus.AllPhases[i].CurrentActiveTime = 0f;
                                     newStatus.AllPhases[i].LastActiveTime = (float)(DateTime.Now - oldPhase.BecameActiveTimestap).TotalSeconds;
+                                    logChange = true;
                                 }
                                 // Phase has just become active
                                 else if (!oldPhase.CurrentlyActive && newStatus.AllPhases[i].CurrentlyActive)
                                 {
                                     newStatus.AllPhases[i].LastActiveTime = oldPhase.LastActiveTime;
                                     newStatus.AllPhases[i].BecameActiveTimestap = DateTime.Now;
+                                    logChange = true;
                                 }
                                 // No change in phase state and active
                                 else if (newStatus.AllPhases[i].CurrentlyActive)
@@ -115,6 +120,26 @@ namespace Transparity.C2C.Client.Example
                         }
 
                         statusDictionary[key] = newStatus;
+
+                        if (logChange)
+                        {
+                            string text = DateTime.Now.ToString("HH:mm:ss") + '\n';
+
+                            foreach (int i in newStatus.ActivePhases)
+                            {
+                                text += i.ToString() + '\t';
+                            }
+                            text += '\n';
+
+                            try
+                            {
+                                File.AppendAllText(LOGFILE, text);
+                            }
+                            catch (Exception e)
+                            {
+                                //TODO Log error
+                            }
+                        }
                     }
 
                 }
