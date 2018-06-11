@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace Transparity.C2C.Client.Example
 {
+    /// <summary>
+    /// Class to hold information about the intersection status
+    /// </summary>
     public class IntersectionStatus
     {
         public string ID { get; set; }

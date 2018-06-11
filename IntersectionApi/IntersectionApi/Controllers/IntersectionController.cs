@@ -1,24 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
+﻿using System.Collections.Generic;
 using System.Web.Http;
 using Transparity.C2C.Client.Example;
-using Transparity.Services.C2C.Interfaces.TMDDInterface.Client;
 
 namespace IntersectionApi.Controllers
 {
+    /// <summary>
+    /// Intersection controller. Add new routes to this file.
+    /// </summary>
     public class IntersectionController : ApiController
     {
         private McCainData intersectionData = new McCainData();
 
+        // GET api/intersection
         public List<IntersectionInventoryItem> GetAll()
         {
             return intersectionData.GetSignalInventory();
         }
 
-        // GET api/<controller>/5
+        // GET api/intersection/<intersection id>
         public IHttpActionResult GetStatusId(string id)
         {
             return Ok(intersectionData.GetIntersectionStatus(id));

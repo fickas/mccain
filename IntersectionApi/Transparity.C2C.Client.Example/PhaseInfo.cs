@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace Transparity.C2C.Client.Example
 {
+    /// <summary>
+    /// Class to hold information about the phase info
+    /// </summary>
     public class PhaseInfo
     {
         public int PhaseID { get; set; }

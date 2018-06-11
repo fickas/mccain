@@ -1,24 +1,13 @@
 ﻿using System;
-using System.Linq;
-using System.ServiceModel;
+using System.Collections.Generic;
 using System.Threading;
 using Transparity.Services.C2C.Interfaces.TMDDInterface.Client;
 using Transparity.Services.C2C.McCainTMDD;
 using Authentication = Transparity.Services.C2C.Interfaces.TMDDInterface.Client.Authentication;
-using C2cMessageSubscription = Transparity.Services.C2C.Interfaces.TMDDInterface.Client.C2cMessageSubscription;
 using CenterActiveVerificationRequest = Transparity.Services.C2C.Interfaces.TMDDInterface.Client.CenterActiveVerificationRequest;
 using DeviceInformationRequest = Transparity.Services.C2C.Interfaces.TMDDInterface.Client.DeviceInformationRequest;
 using IntersectionSignalTimingInventoryRequest = Transparity.Services.C2C.Interfaces.TMDDInterface.Client.IntersectionSignalTimingInventoryRequest;
-using IntersectionSignalTimingPatternInventoryRequest = Transparity.Services.C2C.Interfaces.TMDDInterface.Client.IntersectionSignalTimingPatternInventoryRequest;
-using ITmddOCEnhancedService = Transparity.Services.C2C.Interfaces.TMDDInterface.ITmddOCEnhancedService;
 using OrganizationInformation = Transparity.Services.C2C.Interfaces.TMDDInterface.Client.OrganizationInformation;
-using SubscriptionAction = Transparity.Services.C2C.Interfaces.TMDDInterface.Client.SubscriptionAction;
-using SubscriptionType = Transparity.Services.C2C.Interfaces.TMDDInterface.Client.SubscriptionType;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Transparity.C2C.Client.Example
 {
@@ -32,11 +21,15 @@ namespace Transparity.C2C.Client.Example
         private static string orgId = String.Empty;
         private static List<IntersectionInventoryItem> inventory = new List<IntersectionInventoryItem>();
         private static bool running = true;
+
+        // This dictionary holds the intersections we want to continuously query
         private static Dictionary<string, IntersectionStatus> statusDictionary = new Dictionary<string, IntersectionStatus>();
         private static Thread updateThread;
         private static Object statusLock = new Object();
         
-
+        /// <summary>
+        /// Constructor. Perform setup and start the update thread.
+        /// </summary>
         public McCainData()
         {
             // Disable SSL validation, which prevents a successfull request to a service
@@ -47,11 +40,13 @@ namespace Transparity.C2C.Client.Example
             orgId = SubmitCenterActiveVerificationRequest();
             // Register 18th and Alder for continuouse updates. 
             RegisterIntersectionForUpdates("b57d7710-5361-4d81-83a2-a73000a88971");
-            //RegisterIntersectionForUpdates("b3c0fe11-bbe0-4dd2-9a6d-a77700e13754");
+
+            // Start the update thread
             updateThread = new Thread(UpdatePhaseStatuses);
             updateThread.Start();                
         }
 
+        // Make sure we stop the update thread
         ~McCainData()
         {
             running = false;
@@ -63,7 +58,9 @@ namespace Transparity.C2C.Client.Example
             { }
         }
 
-        // This function will run in a seperate thread constantly updaing the status of each intersection registered for status updates
+        /// <summary>
+        /// This function will run in a seperate thread constantly updaing the status of each intersection registered for status updates
+        /// </summary>
         private void UpdatePhaseStatuses()
         {
             while(running)
@@ -76,6 +73,7 @@ namespace Transparity.C2C.Client.Example
                         IntersectionStatus oldStatus = statusDictionary[key];
                         IntersectionStatus newStatus = GetIntersectionStatusNoLock(key);
 
+                        // If this isn't the first update for this intersection
                         if (oldStatus != null)
                         {
                             for (int i = 0; i < newStatus.AllPhases.Count; i++)
@@ -120,15 +118,23 @@ namespace Transparity.C2C.Client.Example
                     }
 
                 }
+                // Wait one second before checking status
                 Thread.Sleep(1000);
             }
         }
 
+        /// <summary>
+        /// Distable self signed cert validation. This was a part of the McCain project given to use. I assume it's necessary
+        /// </summary>
         private void DisableSelfSignedCertValidation()
         {
             System.Net.ServicePointManager.ServerCertificateValidationCallback = ((sender, certificate, chain, sslPolicyErrors) => true);
         }
 
+        /// <summary>
+        /// Registers an intersetion for continuous updates
+        /// </summary>
+        /// <param name="id">ID of the intersection to register</param>
         public void RegisterIntersectionForUpdates(string id)
         {
             lock (statusLock)
@@ -140,7 +146,10 @@ namespace Transparity.C2C.Client.Example
             }
         }
 
-
+        /// <summary>
+        /// Unregisters an intersection from receiving continuous updates
+        /// </summary>
+        /// <param name="id">ID of the intersection to unregister</param>
         public void UnregisterIntersectionForUpdates(string id)
         {
             lock (statusLock)
@@ -152,6 +161,10 @@ namespace Transparity.C2C.Client.Example
             }
         }
 
+        /// <summary>
+        /// Gets the signal inventory for all intersection. Signal inventory = name and id of each intersection
+        /// </summary>
+        /// <returns>List of intersection inventory items</returns>
         public List<IntersectionInventoryItem> GetSignalInventory()
         {
             if(inventory.Count == 0)
@@ -212,13 +225,19 @@ namespace Transparity.C2C.Client.Example
             return inventory;
         }
 
+        /// <summary>
+        /// Gets the status of on an intersection without acquiring a lock. 
+        /// This should only be called if the lock has already been acquired
+        /// </summary>
+        /// <param name="id">The ID the intersection to query</param>
+        /// <returns>The intersection status</returns>
         private IntersectionStatus GetIntersectionStatusNoLock(string id)
         {
 
             var client = new TmddEnhancedServiceClient();
 
             IntersectionStatus returnStatus = new IntersectionStatus();
-            IntersectionSignalStatus status = PerformStatusQuery(new string[] { id }, client);
+            IntersectionSignalStatus status = PerformStatusQuery(id, client);
             IntersectionSignalTimingInventory inventory = PerformTimingInventoryQuery(id, client);
             returnStatus.ID = status.devicestatusheader.deviceid;
             returnStatus.Name = "";
@@ -240,6 +259,12 @@ namespace Transparity.C2C.Client.Example
             return returnStatus;
         }
 
+        /// <summary>
+        /// Gets the status of an intersection. The status is returned from the statusDictionary if it is getting continuous updates
+        /// </summary>
+        /// <param name="id">ID of the intersection to get the status of</param>
+        /// <param name="forceQuery">If true the status will not be returned from the statusDictionary even if it exists in it</param>
+        /// <returns>The intersection status</returns>
         public IntersectionStatus GetIntersectionStatus(string id, bool forceQuery = false)
         {
             lock (statusLock)
@@ -254,7 +279,6 @@ namespace Transparity.C2C.Client.Example
                     status.ID = statusDictionary[id].ID;
                     status.Name = statusDictionary[id].Name;
                     return status;
-                    return statusDictionary[id];
                 }
 
                 // If we are not tracking still return the intersection status
@@ -263,7 +287,7 @@ namespace Transparity.C2C.Client.Example
                     var client = new TmddEnhancedServiceClient();
 
                     IntersectionStatus returnStatus = new IntersectionStatus();
-                    IntersectionSignalStatus status = PerformStatusQuery(new string[] { id }, client);
+                    IntersectionSignalStatus status = PerformStatusQuery(id, client);
                     IntersectionSignalTimingInventory inventory = PerformTimingInventoryQuery(id, client);
                     returnStatus.ID = status.devicestatusheader.deviceid;
                     returnStatus.Name = "";
@@ -280,8 +304,6 @@ namespace Transparity.C2C.Client.Example
                         item.LastActiveTime = 0;
                         item.CurrentlyActive = returnStatus.ActivePhases.Contains(item.PhaseID);
                         returnStatus.AllPhases.Add(item);
-
-
                     }
 
                     return returnStatus;
@@ -289,6 +311,15 @@ namespace Transparity.C2C.Client.Example
             }
         }
 
+        /// <summary>
+        /// Transforms a groupGreens value into a list of active intersection IDs
+        /// Group greens specifies the active phases by the bits that are set to 1, where the lease significant bit is phase 1
+        /// For example if groupGreen = 37
+        /// 36 in binary = 00100101
+        /// So phases 1, 3, and 6 are active
+        /// </summary>
+        /// <param name="groupGreens">The group greens value</param>
+        /// <returns>List of active phases IDs</returns>
         private List<int> GetActivePhases(byte groupGreens)
         {
             byte mask = 1;
@@ -306,7 +337,13 @@ namespace Transparity.C2C.Client.Example
             return activePhases;
         }
 
-        private IntersectionSignalStatus PerformStatusQuery(string[] ids, TmddEnhancedServiceClient client)
+        /// <summary>
+        /// Queries the TMDD service for the current status of the specified intersections
+        /// </summary>
+        /// <param name="id">The intersections ID to query</param>
+        /// <param name="client">The TMDD client</param>
+        /// <returns>The intersection status</returns>
+        private IntersectionSignalStatus PerformStatusQuery(string id, TmddEnhancedServiceClient client)
         {
             IntersectionSignalStatus status = null;
 
@@ -344,7 +381,7 @@ namespace Transparity.C2C.Client.Example
                 {
                     deviceidlist = new DeviceInformationRequestFilterDeviceidlist()
                     {
-                        deviceid = ids
+                        deviceid = new string[] { id }
                     }
                 },
             };
@@ -368,6 +405,12 @@ namespace Transparity.C2C.Client.Example
             return status;
         }
 
+        /// <summary>
+        /// Queries the TMDD client for the timing inventory of an intersection
+        /// </summary>
+        /// <param name="id">ID of the intersection</param>
+        /// <param name="client">TMDD client</param>
+        /// <returns>The instersection signal timing inventory</returns>
         private IntersectionSignalTimingInventory PerformTimingInventoryQuery(string id, TmddEnhancedServiceClient client)
         {
             IntersectionSignalTimingInventory returnValue = null;
@@ -406,7 +449,7 @@ namespace Transparity.C2C.Client.Example
                     {
                         deviceidlist = new DeviceInformationRequestFilterDeviceidlist()
                         {
-                            deviceid = new[] { "b3c0fe11-bbe0-4dd2-9a6d-a77700e13754" }
+                            deviceid = new[] { id }
                         }
                     },
                 }
@@ -431,7 +474,7 @@ namespace Transparity.C2C.Client.Example
         /// <summary>
         /// Request information about the Traffic Management Center
         /// </summary>
-        /// <returns></returns>
+        /// <returns>The organization id</returns>
         private string SubmitCenterActiveVerificationRequest()
         {
             var client = new TmddEnhancedServiceClient();

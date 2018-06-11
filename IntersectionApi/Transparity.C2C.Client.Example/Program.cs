@@ -1,4 +1,9 @@
-﻿using System;
+﻿//
+//
+// THIS IS NOT USED. THIS WAS GIVEN AS AN EXAMPLE FROM MCCAIN
+//
+//
+using System;
 using System.Linq;
 using System.ServiceModel;
 using System.Threading;
