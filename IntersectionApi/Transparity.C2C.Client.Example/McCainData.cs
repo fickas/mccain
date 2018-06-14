@@ -17,7 +17,8 @@ namespace Transparity.C2C.Client.Example
         private const string Username = "93a7c97b-dd75-4373-9dd6-81683de20d86";
         private const string Password = "yrAteFcHBE1A05YWKjT7";
         // Path to the log file
-        private const string LOGFILE = "C:\\Users\\Ben\\Desktop\\intersection_update.lg";
+        private const string LOGFILE_PATH = "C:\\Users\\Ben\\Desktop\\IntersectionLog\\";
+        private const string ERROR_LOG_PATH = "C:\\Users\\Ben\\Desktop\\IntersectionErrorLog\\";
 
         private static readonly string MyExternalCenterUrl = Properties.Settings.Default.ExternalCenterUrl;
         private static readonly Guid SubscriptionId = Guid.NewGuid();
@@ -43,7 +44,6 @@ namespace Transparity.C2C.Client.Example
             orgId = SubmitCenterActiveVerificationRequest();
             // Register 18th and Alder for continuouse updates. 
             RegisterIntersectionForUpdates("b57d7710-5361-4d81-83a2-a73000a88971");
-
             // Start the update thread
             updateThread = new Thread(UpdatePhaseStatuses);
             updateThread.Start();                
@@ -71,73 +71,82 @@ namespace Transparity.C2C.Client.Example
                 lock(statusLock)
                 {
                     var keys = new List<string>(statusDictionary.Keys);
-                    foreach (string key in keys)
+                    List<IntersectionStatus> statuses = GetIntersectionStatusNoLock(keys.ToArray());
+
+                    foreach (IntersectionStatus status in statuses)
                     {
-                        IntersectionStatus oldStatus = statusDictionary[key];
-                        IntersectionStatus newStatus = GetIntersectionStatusNoLock(key);
-                        bool logChange = false;
-                        // If this isn't the first update for this intersection
-                        if (oldStatus != null)
+                        if (statusDictionary.ContainsKey(status.ID))
                         {
-                            for (int i = 0; i < newStatus.AllPhases.Count; i++)
-                            {
-                                PhaseInfo oldPhase = oldStatus.AllPhases.Find(x => x.PhaseID == newStatus.AllPhases[i].PhaseID);
+                            IntersectionStatus oldStatus = statusDictionary[status.ID];
+                            bool logChange = false;
 
-                                // Phase has become inactive
-                                if (oldPhase.CurrentlyActive && !newStatus.AllPhases[i].CurrentlyActive)
+                            // If this isn't the first update for this intersection
+                            if (oldStatus != null)
+                            {
+                                for (int i = 0; i < status.AllPhases.Count; i++)
                                 {
-                                    newStatus.AllPhases[i].CurrentActiveTime = 0f;
-                                    newStatus.AllPhases[i].LastActiveTime = (float)(DateTime.Now - oldPhase.BecameActiveTimestap).TotalSeconds;
-                                    logChange = true;
-                                }
-                                // Phase has just become active
-                                else if (!oldPhase.CurrentlyActive && newStatus.AllPhases[i].CurrentlyActive)
-                                {
-                                    newStatus.AllPhases[i].LastActiveTime = oldPhase.LastActiveTime;
-                                    newStatus.AllPhases[i].BecameActiveTimestap = DateTime.Now;
-                                    logChange = true;
-                                }
-                                // No change in phase state and active
-                                else if (newStatus.AllPhases[i].CurrentlyActive)
-                                {
-                                    newStatus.AllPhases[i].LastActiveTime = oldPhase.LastActiveTime;
-                                    newStatus.AllPhases[i].BecameActiveTimestap = oldPhase.BecameActiveTimestap;
-                                    newStatus.AllPhases[i].CurrentActiveTime = (float)(DateTime.Now - newStatus.AllPhases[i].BecameActiveTimestap).TotalSeconds;
-                                }
-                                // No change in phase state and not active
-                                else
-                                {
-                                    newStatus.AllPhases[i] = oldPhase;
+                                    PhaseInfo oldPhase = oldStatus.AllPhases.Find(x => x.PhaseID == status.AllPhases[i].PhaseID);
+
+                                    // Phase has become inactive
+                                    if (oldPhase.CurrentlyActive && !status.AllPhases[i].CurrentlyActive)
+                                    {
+                                        status.AllPhases[i].CurrentActiveTime = 0f;
+                                        status.AllPhases[i].LastActiveTime = (float)(DateTime.Now - oldPhase.BecameActiveTimestap).TotalSeconds;
+                                        logChange = true;
+                                    }
+                                    // Phase has just become active
+                                    else if (!oldPhase.CurrentlyActive && status.AllPhases[i].CurrentlyActive)
+                                    {
+                                        status.AllPhases[i].LastActiveTime = oldPhase.LastActiveTime;
+                                        status.AllPhases[i].BecameActiveTimestap = DateTime.Now;
+                                        logChange = true;
+                                    }
+                                    // No change in phase state and active
+                                    else if (status.AllPhases[i].CurrentlyActive)
+                                    {
+                                        status.AllPhases[i].LastActiveTime = oldPhase.LastActiveTime;
+                                        status.AllPhases[i].BecameActiveTimestap = oldPhase.BecameActiveTimestap;
+                                        status.AllPhases[i].CurrentActiveTime = (float)(DateTime.Now - status.AllPhases[i].BecameActiveTimestap).TotalSeconds;
+                                    }
+                                    // No change in phase state and not active
+                                    else
+                                    {
+                                        status.AllPhases[i] = oldPhase;
+                                    }
                                 }
                             }
-                        }
-                        else
-                        {
-                            foreach(int activePhase in newStatus.ActivePhases)
+                            else
                             {
-                                newStatus.AllPhases.Find(x => x.PhaseID == activePhase).BecameActiveTimestap = DateTime.Now;                                 
+                                foreach (int activePhase in status.ActivePhases)
+                                {
+                                    status.AllPhases.Find(x => x.PhaseID == activePhase).BecameActiveTimestap = DateTime.Now;
+                                }
                             }
-                        }
 
-                        statusDictionary[key] = newStatus;
+                            statusDictionary[status.ID] = status;
 
-                        if (logChange)
-                        {
-                            string text = DateTime.Now.ToString("HH:mm:ss") + '\n';
-
-                            foreach (int i in newStatus.ActivePhases)
+                            if (logChange)
                             {
-                                text += i.ToString() + '\t';
-                            }
-                            text += '\n';
+                                string text = DateTime.Now.ToString("MM/dd/yyyy\tHH:mm:ss") + '\t';
 
-                            try
-                            {
-                                File.AppendAllText(LOGFILE, text);
-                            }
-                            catch (Exception e)
-                            {
-                                //TODO Log error
+                                foreach (int i in status.ActivePhases)
+                                {
+                                    text += i.ToString() + '\t';
+                                }
+                                text += '\n';
+
+                                try
+                                {
+                                    if(!Directory.Exists(LOGFILE_PATH))
+                                    {
+                                        Directory.CreateDirectory(LOGFILE_PATH);
+                                    }
+                                    File.AppendAllText(LOGFILE_PATH + status.ID + ".lg", text);
+                                }
+                                catch (Exception e)
+                                {
+                                    LogError(e.Message);
+                                }
                             }
                         }
                     }
@@ -243,7 +252,7 @@ namespace Transparity.C2C.Client.Example
                 catch (Exception ex)
                 {
                     inventory = null;
-                    // TODO: Log error
+                    LogError(ex.Message);
                 }
             }
 
@@ -256,29 +265,35 @@ namespace Transparity.C2C.Client.Example
         /// </summary>
         /// <param name="id">The ID the intersection to query</param>
         /// <returns>The intersection status</returns>
-        private IntersectionStatus GetIntersectionStatusNoLock(string id)
+        private List<IntersectionStatus> GetIntersectionStatusNoLock(string[] id)
         {
 
             var client = new TmddEnhancedServiceClient();
 
-            IntersectionStatus returnStatus = new IntersectionStatus();
-            IntersectionSignalStatus status = PerformStatusQuery(id, client);
-            IntersectionSignalTimingInventory inventory = PerformTimingInventoryQuery(id, client);
-            returnStatus.ID = status.devicestatusheader.deviceid;
-            returnStatus.Name = "";
-            returnStatus.GroupGreens = status.phasestatus.phasestatusgroup[0].phasestatusgroupgreens;
-            returnStatus.AllPhases = new List<PhaseInfo>();
-            returnStatus.ActivePhases = GetActivePhases(status.phasestatus.phasestatusgroup[0].phasestatusgroupgreens);
+            List<IntersectionStatus> returnStatus = new List<IntersectionStatus>();
+            IntersectionSignalStatus[] status = PerformStatusQuery(id, client);
 
-            foreach (var phase in inventory.phases.phases)
+            foreach (IntersectionSignalStatus s in status)
             {
-                PhaseInfo item = new PhaseInfo();
-                item.PhaseID = phase.phaseidentifier;
-                item.MinGreen = phase.MinGreen;
-                item.MaxGreen = phase.MaxLimit;
-                item.LastActiveTime = 0;
-                item.CurrentlyActive = returnStatus.ActivePhases.Contains(item.PhaseID);
-                returnStatus.AllPhases.Add(item);
+                IntersectionStatus curStatus = new IntersectionStatus();
+                curStatus.ID = s.devicestatusheader.deviceid;
+                IntersectionSignalTimingInventory inventory = PerformTimingInventoryQuery(s.devicestatusheader.deviceid, client);
+                curStatus.Name = "";
+                curStatus.GroupGreens = s.phasestatus.phasestatusgroup[0].phasestatusgroupgreens;
+                curStatus.AllPhases = new List<PhaseInfo>();
+                curStatus.ActivePhases = GetActivePhases(s.phasestatus.phasestatusgroup[0].phasestatusgroupgreens);
+
+                foreach (var phase in inventory.phases.phases)
+                {
+                    PhaseInfo item = new PhaseInfo();
+                    item.PhaseID = phase.phaseidentifier;
+                    item.MinGreen = phase.MinGreen;
+                    item.MaxGreen = phase.MaxLimit;
+                    item.LastActiveTime = 0;
+                    item.CurrentlyActive = curStatus.ActivePhases.Contains(item.PhaseID);
+                    curStatus.AllPhases.Add(item);
+                }
+                returnStatus.Add(curStatus);
             }
 
             return returnStatus;
@@ -312,7 +327,7 @@ namespace Transparity.C2C.Client.Example
                     var client = new TmddEnhancedServiceClient();
 
                     IntersectionStatus returnStatus = new IntersectionStatus();
-                    IntersectionSignalStatus status = PerformStatusQuery(id, client);
+                    IntersectionSignalStatus status = PerformStatusQuery(new string[] { id }, client)[0];
                     IntersectionSignalTimingInventory inventory = PerformTimingInventoryQuery(id, client);
                     returnStatus.ID = status.devicestatusheader.deviceid;
                     returnStatus.Name = "";
@@ -368,9 +383,9 @@ namespace Transparity.C2C.Client.Example
         /// <param name="id">The intersections ID to query</param>
         /// <param name="client">The TMDD client</param>
         /// <returns>The intersection status</returns>
-        private IntersectionSignalStatus PerformStatusQuery(string id, TmddEnhancedServiceClient client)
+        private IntersectionSignalStatus[] PerformStatusQuery(string[] id, TmddEnhancedServiceClient client)
         {
-            IntersectionSignalStatus status = null;
+            IntersectionSignalStatus[] status = null;
 
             // Create the inventory request.  
             var request = new DeviceInformationRequest
@@ -406,7 +421,7 @@ namespace Transparity.C2C.Client.Example
                 {
                     deviceidlist = new DeviceInformationRequestFilterDeviceidlist()
                     {
-                        deviceid = new string[] { id }
+                        deviceid =  id
                     }
                 },
             };
@@ -419,12 +434,12 @@ namespace Transparity.C2C.Client.Example
                 // Iterate through the collection to inspect the objects.
                 if (response.intersectionsignalstatusitem != null)
                 {
-                    status = response.intersectionsignalstatusitem[0];
+                    status = response.intersectionsignalstatusitem;
                 }
             }
             catch (Exception ex)
             {
-                //TODO: log error
+                LogError(ex.Message);
                 status = null;
             }
             return status;
@@ -491,7 +506,7 @@ namespace Transparity.C2C.Client.Example
             }
             catch (Exception ex)
             {
-                // TODO: Log error
+                LogError(ex.Message);
             }
             return returnValue;
         }
@@ -524,9 +539,18 @@ namespace Transparity.C2C.Client.Example
             }
             catch (Exception ex)
             {
-                // TODO: Log error
+                LogError(ex.Message);
                 return null;
             }
+        }
+
+        private void LogError(string error)
+        {
+            if(!Directory.Exists(ERROR_LOG_PATH))
+            {
+                Directory.CreateDirectory(ERROR_LOG_PATH);
+            }
+            File.AppendAllText(ERROR_LOG_PATH + "error_log.txt", error);
         }
     }
 }
