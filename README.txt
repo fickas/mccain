@@ -21,6 +21,11 @@ Registers the intersection for logging and continuous updates
 api/intersection/unregister/{id}
 Unregisters the intersetion for logging and continuous updates
 
+*** IMPORTANT ***
+Make sure to always have keep_alive.py running to stop the Internet Information Services Manager 
+from shutting down the server process.
+******
+
 Each intersection status has the following values:
 ID (string): The ID of the intersection
 Name (string): Currently not used
