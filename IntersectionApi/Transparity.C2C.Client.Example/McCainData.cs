@@ -91,22 +91,22 @@ namespace Transparity.C2C.Client.Example
                                     if (oldPhase.CurrentlyActive && !status.AllPhases[i].CurrentlyActive)
                                     {
                                         status.AllPhases[i].CurrentActiveTime = 0f;
-                                        status.AllPhases[i].LastActiveTime = (float)(DateTime.Now - oldPhase.BecameActiveTimestap).TotalSeconds;
+                                        status.AllPhases[i].LastActiveTime = (float)(DateTime.Now - oldPhase.BecameActiveTimestamp).TotalSeconds;
                                         logChange = true;
                                     }
                                     // Phase has just become active
                                     else if (!oldPhase.CurrentlyActive && status.AllPhases[i].CurrentlyActive)
                                     {
                                         status.AllPhases[i].LastActiveTime = oldPhase.LastActiveTime;
-                                        status.AllPhases[i].BecameActiveTimestap = DateTime.Now;
+                                        status.AllPhases[i].BecameActiveTimestamp = DateTime.Now;
                                         logChange = true;
                                     }
                                     // No change in phase state and active
                                     else if (status.AllPhases[i].CurrentlyActive)
                                     {
                                         status.AllPhases[i].LastActiveTime = oldPhase.LastActiveTime;
-                                        status.AllPhases[i].BecameActiveTimestap = oldPhase.BecameActiveTimestap;
-                                        status.AllPhases[i].CurrentActiveTime = (float)(DateTime.Now - status.AllPhases[i].BecameActiveTimestap).TotalSeconds;
+                                        status.AllPhases[i].BecameActiveTimestamp = oldPhase.BecameActiveTimestamp;
+                                        status.AllPhases[i].CurrentActiveTime = (float)(DateTime.Now - status.AllPhases[i].BecameActiveTimestamp).TotalSeconds;
                                     }
                                     // No change in phase state and not active
                                     else
@@ -119,7 +119,7 @@ namespace Transparity.C2C.Client.Example
                             {
                                 foreach (int activePhase in status.ActivePhases)
                                 {
-                                    status.AllPhases.Find(x => x.PhaseID == activePhase).BecameActiveTimestap = DateTime.Now;
+                                    status.AllPhases.Find(x => x.PhaseID == activePhase).BecameActiveTimestamp = DateTime.Now;
                                 }
                             }
 

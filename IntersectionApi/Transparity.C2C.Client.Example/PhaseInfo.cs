@@ -16,7 +16,7 @@ namespace Transparity.C2C.Client.Example
         public int MaxGreen { get; set; }
         public float LastActiveTime { get; set; }
         public float CurrentActiveTime { get; set; }
-        public DateTime BecameActiveTimestap { get; set; }
+        public DateTime BecameActiveTimestamp { get; set; }
         public bool CurrentlyActive { get; set; }
     }
 }
