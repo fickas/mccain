@@ -4,6 +4,8 @@
 
 "IntersectionApi" is the project for the server
 
+"IntersectionPredictor" is the project for the Android app that uses the server
+
 The server is a REST server with the following paths:
 
 api/intersection
